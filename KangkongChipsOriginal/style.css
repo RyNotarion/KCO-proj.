@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Ga Maamli", sans-serif;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #F7E603;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    position: relative; /* Required for absolute positioning of video */
+    overflow: hidden; /* Prevent overflow of the video */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40));
+    background-position: center;
+    background-size: cover; /* Changed to cover for better responsiveness */
+}
+
+.banner video {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    min-width: 100%; /* Cover the full width */
+    min-height: 100%; /* Cover the full height */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    transform: translate(-50%, -50%); /* Centering */
+    z-index: -1; /* Ensure video is behind content */
+}
+
+.navbar {
+    width: 90%;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 160px;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+.navbar ul {
+    display: flex; /* Added flex display for better alignment */
+}
+
+.navbar ul li {
+    list-style: none;
+    margin: 20px;
+}
+
+.navbar ul li a {
+    font-size: 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #F7E603;
+    font-weight: 500;
+    padding: 15px;
+}
+
+li a:hover {
+    background: #8FD14F;
+    transition: 0.6s;
+}
+
+.navbar a:hover {
+    color: #F7E603;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    color: white;
+    top: 50%; /* Centering vertically */
+    left: 50%; /* Centering horizontally */
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.content h1 {
+    margin-top: 20px; /* Adjusted for mobile */
+    font-size: 5vw; /* Responsive font size */
+    font-weight: 800;
+}
+
+button {
+    width: 200px;
+    padding: 15px;
+    margin: 20px 5px;
+    text-align: center;
+    border-radius: 25px;
+    color: #F7E603;
+    border: none; /* Fixed border property */
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white;
+    font-weight: 500;
+}
+
+button:hover {
+    background: rgb(0, 192, 226);
+    transition: 0.5s;
+    background-color: #8FD14F;
+    color: #F7E603;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .banner video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) { /* For tablets and mobile devices */
+    .navbar {
+        flex-direction: column; /* Stack navbar items */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .navbar ul li {
+        margin: 10px 0; /* Adjust spacing for mobile */
+    }
+
+    .content h1 {
+        font-size: 8vw; /* Make heading responsive */
+    }
+
+    button {
+        width: 100%; /* Make buttons full width on mobile */
+    }
+}
+
+@media (max-width: 480px) { /* For smaller mobile devices */
+    .content h1 {
+        font-size: 10vw; /* Further reduce size for smaller screens */
+    }
+
+    .navbar ul li a {
+        font-size: 1.5rem; /* Smaller text for mobile */
+    }
+}
